@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#09090b">
+  <meta name="description" content="STREETZ VENDETTA SHOP — Your city. Your rules. Your legacy.">
+  <title>STREETZ VENDETTA SHOP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Streetz Vendetta accueil">
+      <span class="brand-mark">SV</span><span>STREETZ <b>VENDETTA</b><small>OFFICIAL SHOP</small></span>
+    </a>
+    <nav class="desktop-nav">
+      <a href="#trending">TRENDING</a><a href="#catalogue">SHOP</a><a href="#announcements">NEWS</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-button" id="searchToggle" aria-label="Afficher la recherche">⌕</button>
+      <button class="account-button" id="accountButton">ACCOUNT <span>↗</span></button>
+      <button class="menu-button" id="menuToggle" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img class="hero-image" src="/assets/streetz-vendetta-banner.webp" alt="Visuel STREETZ VENDETTA dans une rue de nuit">
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <div class="eyebrow"><i></i> THE OFFICIAL MARKETPLACE</div>
+        <h1>YOUR CITY.<br><span>YOUR RULES.</span></h1>
+        <p>YOUR LEGACY STARTS HERE.</p>
+        <div class="hero-buttons"><a class="primary-button" href="#catalogue">EXPLORE THE SHOP <b>↗</b></a><a class="ghost-button" href="#announcements">LATEST NEWS</a></div>
+      </div>
+      <div class="hero-bottom"><span>STREETZ VENDETTA</span><span>ROBLOX EXPERIENCE <i>●</i></span></div>
+    </section>
+
+    <section class="trending section-wrap" id="trending">
+      <div class="section-heading"><div><span class="eyebrow red">THE COMMUNITY PICKS</span><h2>TOP <em>TRENDING</em></h2></div><a href="#catalogue" class="text-link">VIEW ALL <b>↗</b></a></div>
+      <div class="product-grid" id="trendingGrid"></div>
+    </section>
+
+    <section class="promo section-wrap">
+      <div class="promo-icon">%</div>
+      <div class="promo-copy"><span class="eyebrow">COMMUNITY REWARD</span><h2>GET <em>25% OFF</em></h2><p>FOLLOW AIMEN_110 AND JOIN OUR ROBLOX GROUP FOR 25% REDUCTION!</p><small>Promotional offer. The displayed Roblox Gamepass price is the actual purchase price.</small></div>
+      <div class="promo-actions"><a class="primary-button" target="_blank" rel="noopener" href="https://www.roblox.com/users/search?keyword=Aimen_110">FOLLOW AIMEN_110 ↗</a><a class="ghost-button" target="_blank" rel="noopener" href="https://www.roblox.com/communities/667669322/clipse-Production#!/about">JOIN ROBLOX GROUP ↗</a></div>
+    </section>
+
+    <section class="catalogue section-wrap" id="catalogue">
+      <div class="section-heading"><div><span class="eyebrow red">FIND YOUR NEXT UPGRADE</span><h2>THE <em>SHOP</em></h2></div><span class="catalogue-count" id="catalogueCount">0 ITEMS</span></div>
+      <div class="catalogue-tools">
+        <label class="search-box"><span>⌕</span><input id="searchInput" placeholder="Search products..." autocomplete="off"></label>
+        <select id="sortSelect" aria-label="Trier les produits"><option value="featured">Featured</option><option value="price-asc">Price: low to high</option><option value="price-desc">Price: high to low</option><option value="name">Name: A–Z</option></select>
+      </div>
+      <div class="category-list" id="categoryList"></div>
+      <div class="product-grid" id="catalogueGrid"></div>
+      <div class="empty-state hidden" id="emptyState">NO PRODUCTS FOUND.<small>Try another search or category.</small></div>
+    </section>
+
+    <section class="latest section-wrap">
+      <div class="section-heading"><div><span class="eyebrow red">FRESH FROM THE STREETS</span><h2>LATEST <em>RELEASES</em></h2></div></div>
+      <div class="product-grid" id="latestGrid"></div>
+    </section>
+
+    <section class="announcements section-wrap" id="announcements">
+      <div class="section-heading"><div><span class="eyebrow red">WHAT'S HAPPENING</span><h2>STREET <em>NEWS</em></h2></div></div>
+      <div id="announcementList" class="announcement-list"><div class="loading-line">LOADING ANNOUNCEMENTS...</div></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-main"><div class="brand footer-brand"><span class="brand-mark">SV</span><span>STREETZ <b>VENDETTA</b><small>YOUR CITY. YOUR RULES. YOUR LEGACY.</small></span></div><p>THE OFFICIAL STREETZ VENDETTA MARKETPLACE.<br>BUILT FOR THE COMMUNITY.</p><div class="footer-links"><a href="https://discord.gg/y6syTGU2z" target="_blank" rel="noopener">DISCORD ↗</a><a href="https://www.roblox.com/communities/667669322/clipse-Production#!/about" target="_blank" rel="noopener">ROBLOX GROUP ↗</a></div></div>
+    <div class="footer-bottom"><span>© <span id="year"></span> STREETZ VENDETTA SHOP</span><span>UNOFFICIAL COMMUNITY MARKETPLACE · ROBLOX IS A TRADEMARK OF ROBLOX CORPORATION</span></div>
+  </footer>
+
+  <div class="modal-backdrop hidden" id="modalBackdrop">
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Fermer">×</button>
+      <div id="modalContent"></div>
+    </section>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="/app.js" defer></script>
+</body>
+</html>
